@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre mystère</title>
+</head>
+<body>
+    <script>
+
+        const NOMBRE_MYSTERE = Math.random((1, 100) * 100);
+        let continuer = true;
+    
+    while(continuer == true)
+    {
+        let nombre = Number(prompt("Entrez un nombre : "));
+
+        console.log("Vous avez entré le nombre : ", nombre);
+
+        if (nombre == NOMBRE_MYSTERE)
+        {
+            console.log("Bravo, vous avez trouvé le nombre mystère");
+            continuer = false;
+        }
+        if (nombre == isNaN) console.log("Ce n'est pas un nombre.");
+        else
+        {
+            if (nombre < NOMBRE_MYSTERE) console.log("Le nombre mystère est plus grand !");
+            else console.log("Le nombre mystère est plus petit !");
+        }
+        
+    }
+        
+    </script>
+</body>
+</html>
