@@ -9,18 +9,20 @@
     <script>
         // Exercice 1 : Saisir deux nombre et afficher lequel est le plus grand
 
+        // Aidé par copilot*
+
         let nombre1 = Number(prompt("Entrez un premier nombre : "));
         let nombre2 = Number(prompt("Entrez un deuxième nombre : "));
         if (nombre1 > nombre2) console.log("Le premier nombre est plus grand que le deuxième.");
         else if (nombre1 < nombre2) console.log("Le deuxième nombre est plus grand que le premier.");
         else console.log("Les deux nombres sont égaux.");
 
-        function comparerNombres(nombre1, nombre2) {
+        function comparerNombres(arg1, arg2) {
             if (nombre1 > nombre2) return "Le premier nombre est plus grand que le deuxième.";
             else if (nombre1 < nombre2) return "Le deuxième nombre est plus grand que le premier.";
             else return "Les deux nombres sont égaux.";
         }
-
+        
         let resultat = comparerNombres(nombre1, nombre2);
         console.log(resultat);
     </script>
