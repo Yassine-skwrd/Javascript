@@ -6,6 +6,11 @@
 // - estLong() qui renvoie true si le nombre de pages dépasse 300, false sinon
 // - emprunter() qui renvoie "Le livre a été emprunté" si le livre est empruntable, "Le livre ne peut pas être emprunté" sinon
 // - rendre() qui renvoie "Le livre a été rendu" si le livre a été emprunté, "Le livre n'a pas été rendu" sinon
+const readline = require('node:readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
 
 let livre = {
     titre: "La belle et la bête",
@@ -14,29 +19,31 @@ let livre = {
     empruntable: true,
 
     Afficher: function() {
-        console.log('Le titre', this.titre, '\n L\'auteur : ', this.auteur, '\n Le nombre de pages : ', this.nbPages);
+        console.log('Le titre', this.titre, '\nL\'auteur : ', this.auteur, '\nLe nombre de pages : ', this.nbPages);
     },
 
     estLong: function() {
-        return `Livre long: ${this.nbPages > 300}`;
+        return this.nbPages > 300;
     },
 
     emprunter: function() {
-        if (this.empruntable === true) {
+        if (this.empruntable) {
             this.empruntable = false;
-            return "Ce livre est disponible, il a à été emprunté.";
+            return "Ce livre est disponible, il a été emprunté.";
         }
         else return "Ce livre n'est pas empruntable";
     },
 
     rendre: function() {
-        if (this.empruntable === false)
+        if (!this.empruntable) {            
+            this.empruntable = true;
             return "Le livre a été rendu.";
+        }
         else return "Le livre n'a pas été rendu";
     }
 }
 
 livre.Afficher();
-console.log(livre.estLong());
+console.log(livre.estLong()? "Le livre est long.":"Le livre est pas long.");
 console.log(livre.emprunter());
 console.log(livre.rendre());
