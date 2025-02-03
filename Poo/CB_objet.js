@@ -32,30 +32,28 @@ let compte_bancaire_v2 = {
     Numero: '4054 3255 5643 3452',
     Solde: 302,
 
-    Afficher() {
+    Afficher: function() {
         console.log(this.Client, '\n', this.Numero, '\n', 'Solde: ', this.Solde, '€');
     },
 
-    Crediter(add) {
-        if (typeof add !== 'number' || add <= 0) {
+    Crediter: function(add) {
+        if (typeof add !== Number || add <= 0)
             console.log('Montant invalide pour un crédit.');
-            return;
-        }
+        else {
         this.Solde += add;
         console.log(`Un montant de : ${add}€ a été crédité. Solde actuel : ${this.Solde}€`);
+        }
     },
 
-    Debiter(rem) {
-        if (typeof rem !== Number || rem <= 0) {
+    Debiter: function(rem) {
+        if (typeof rem !== Number || rem <= 0)
             console.log('Montant invalide pour un débit.');
-            return;
-        }
-        if (rem > this.Solde) {
+        else if (rem > this.Solde)
             console.log('Votre solde restant est insuffisant.');
-            return;
-        }
+        else {
         this.Solde -= rem;
         console.log(`Un montant de : ${rem}€ a été débité. Solde actuel : ${this.Solde}€`);
+        }
     }
 };
 
