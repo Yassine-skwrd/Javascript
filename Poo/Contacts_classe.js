@@ -20,7 +20,7 @@ class Contact {
     toString() {
         console.log(`Contact :\n\n- Nom : ${this.nom}\n- Prénom : ${this.prenom}\n- Date : ${this.date_de_naissance}`);
         console.log(`- Genre : ${this.genre}\n- Adresse : ${this.adresse}\n- Code postal : ${this.cp}`);
-        console.log(`- Ville : ${this.ville}\n- Téléphone : ${this.tel}\n- Courriel : ${this.courriel}`);
+        console.log(`- Ville : ${this.ville}\n- Téléphone : ${this.tel}\n- Courriel : ${this.courriel}\n\n`);
     }
     email() {
         console.log("Un courriel à bien été envoyé à : ", this.courriel);
