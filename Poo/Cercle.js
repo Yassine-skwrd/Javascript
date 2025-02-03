@@ -6,7 +6,7 @@ class Cercle {
     }
 
     aire() {
-        return (Math.PI) * (Math.sqrt(this.rayon));
+        return (Math.PI) * (Math.pow(this.rayon, 2));
     }
 }
 
