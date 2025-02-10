@@ -1,3 +1,4 @@
+const { cpuUsage } = require('node:process');
 const readline = require('node:readline');
 const rl = readline.createInterface({
     input: process.stdin,
@@ -67,3 +68,5 @@ let contact3 = new Contact(
 contact1.toString();
 contact2.toString();
 contact3.toString();
+
+contact2.email();
