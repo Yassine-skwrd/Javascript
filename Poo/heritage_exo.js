@@ -1,26 +1,14 @@
-// Créer une classe Contact :
-// Propriétés :
-//     Nom,
-//     Prenom,
-//     Date de naissance,
-// Méthodes :
-//     afficher    // Affiche les infos du contact
-// Hériter une classe Employe:
-// Propriété :
-//     Salaire
-//     Anciennete (année)
-// Méthode :
-//     augmenterSalaire
-//         Ajoute 10% si anciennete >10
-//         Sinon ajoute 5%
-//     afficher (avec le salaire et l'ancienneté)
+// Créer une classe Contact avec nom , prénom et date de naissance
+// Hériter une classe Employé avec un salaire et une ancienneté
+// Ajouter différentes méthodes (voir le discord pour une consigne plus précise)
 
 class Contact {
     constructor(nom, prenom, date_naissance) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.date_naissance = date_naissance;
-
+        // this.nom = nom;
+        // this.prenom = prenom;
+        // this.date_naissance = date_naissance;
+        Object.assign(this, {nom, prenom, date_naissance});
+        
         // raccourci : Object.assign(this, {nom, prenom, date_naissance});
     }
 
@@ -32,8 +20,8 @@ class Contact {
 }
 
 class Employe extends Contact {
-    constructor(salaire, anciennete) {
-        super(this.nom, this.prenom, this.date_naissance);
+    constructor(nom, prenom, date_naissance, salaire, anciennete) {
+        super(nom, prenom, date_naissance);
 
         this.salaire = salaire;
         this.anciennete = anciennete;
@@ -42,11 +30,11 @@ class Employe extends Contact {
     // Méthodes : 
 
     augmenterSalaire() {
-        this.anciennete >= 10 ? this.salaire * 1.1 : this.salaire = 1.05;
+        this.anciennete >= 10 ? this.salaire *= 1.1 : this.salaire *= 1.05;
     }
 
     toStringEmploye() {
-        console.log(`L'employé ${this.prenom} travaille depuis ${this.anciennete} années. Son salaire est ${this.salaire}€`);
+        console.log(`L'employé ${this.prenom} travaille depuis ${this.anciennete} années. Son salaire est ${Math.round(this.salaire, 2)}€`);
     }
 }
 
